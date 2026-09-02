@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TTS Workbench — local booth</title>
+    <meta name="description" content="Paste text, pick a local voice, get an mp3. Localhost only." />
+    <link rel="stylesheet" href="/app.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="mast">
+      <p class="reel">Take booth · 127.0.0.1</p>
+      <h1>TTS Workbench</h1>
+      <p class="lede">Paste a script. Punch a voice. The take lands in <code>~/TTS</code>. Nothing here clones a person.</p>
+    </header>
+
+    <main class="deck">
+      <section class="script" aria-labelledby="script-label">
+        <div class="script-head">
+          <h2 id="script-label">Script</h2>
+          <p id="script-meta" class="meta">0 words</p>
+        </div>
+        <label class="sr-only" for="text">Text to speak</label>
+        <textarea
+          id="text"
+          name="text"
+          rows="16"
+          maxlength="20000"
+          placeholder="Drop a paragraph, a note, a letter you want to hear back."
+          spellcheck="true"
+        ></textarea>
+      </section>
+
+      <section class="rack" aria-labelledby="rack-label">
+        <h2 id="rack-label">Voice rack</h2>
+        <p class="hint">Local voices never leave this machine. Hosted ones need a key and do.</p>
+        <div id="voices" class="rack-body"></div>
+      </section>
+    </main>
+
+    <section class="transport" aria-label="Record">
+      <div class="vu" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <button id="record" type="button">Record take</button>
+      <p id="status" class="status" role="status"></p>
+    </section>
+
+    <section class="log" aria-labelledby="log-label">
+      <h2 id="log-label">Tape log</h2>
+      <ol id="takes"></ol>
+    </section>
+
+    <section class="player" id="player" aria-label="Playback">
+      <div class="player-inner">
+        <div class="player-now">
+          <p class="player-kicker">Now playing</p>
+          <h2 id="player-title">No take loaded</h2>
+          <p id="player-sub" class="player-sub">Record a take or cue one from the tape log.</p>
+        </div>
+        <div class="scrub">
+          <span id="player-current" class="time">0:00</span>
+          <label class="sr-only" for="player-seek">Seek</label>
+          <input
+            id="player-seek"
+            type="range"
+            min="0"
+            max="0"
+            value="0"
+            step="0.1"
+            disabled
+          />
+          <span id="player-duration" class="time">0:00</span>
+        </div>
+        <div class="player-controls">
+          <button type="button" id="player-back" disabled aria-label="Back 15 seconds">−15</button>
+          <button type="button" id="player-toggle" class="player-toggle" disabled>Play</button>
+          <button type="button" id="player-fwd" disabled aria-label="Forward 15 seconds">+15</button>
+          <button type="button" id="player-rate" class="player-rate" disabled aria-label="Playback speed">1×</button>
+        </div>
+        <p class="player-keys">Space play/pause · ← −15s · → +15s</p>
+      </div>
+    </section>
+
+    <footer class="colophon">
+      <p>
+        Kokoro and Piper run on CPU. OpenAI is an optional quality fallback, not the product.
+        Frontier voice models plus licensing are why ElevenLabs exists; this booth does not pretend otherwise.
+      </p>
+    </footer>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

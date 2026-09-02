@@ -1,0 +1,71 @@
+{
+  "default": "heart",
+  "voices": [
+    {
+      "name": "heart",
+      "engine": "kokoro",
+      "voice": "af_heart",
+      "speed": 1
+    },
+    {
+      "name": "bella",
+      "engine": "kokoro",
+      "voice": "af_bella",
+      "speed": 1
+    },
+    {
+      "name": "nicole",
+      "engine": "kokoro",
+      "voice": "af_nicole",
+      "speed": 1
+    },
+    {
+      "name": "puck",
+      "engine": "kokoro",
+      "voice": "am_puck",
+      "speed": 1
+    },
+    {
+      "name": "michael",
+      "engine": "kokoro",
+      "voice": "am_michael",
+      "speed": 1
+    },
+    {
+      "name": "emma",
+      "engine": "kokoro",
+      "voice": "bf_emma",
+      "speed": 1
+    },
+    {
+      "name": "lessac",
+      "engine": "piper",
+      "voice": "en_US-lessac-medium",
+      "speed": 1
+    },
+    {
+      "name": "amy",
+      "engine": "piper",
+      "voice": "en_US-amy-medium",
+      "speed": 1
+    },
+    {
+      "name": "alloy",
+      "engine": "openai",
+      "voice": "alloy",
+      "speed": 1
+    },
+    {
+      "name": "nova",
+      "engine": "openai",
+      "voice": "nova",
+      "speed": 1
+    },
+    {
+      "name": "onyx",
+      "engine": "openai",
+      "voice": "onyx",
+      "speed": 1
+    }
+  ]
+}

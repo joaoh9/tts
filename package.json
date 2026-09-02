@@ -1,0 +1,25 @@
+{
+  "name": "tts-workbench",
+  "version": "1.0.0",
+  "description": "Personal local-first text-to-speech workbench: Kokoro/Piper on CPU, optional OpenAI fallback.",
+  "type": "module",
+  "bin": {
+    "tts": "./bin/tts.js"
+  },
+  "scripts": {
+    "start": "node bin/tts.js serve",
+    "tts": "node bin/tts.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "ffmpeg-static": "^5.2.0",
+    "kokoro-js": "^1.2.1",
+    "openai": "^4.86.2"
+  }
+}
